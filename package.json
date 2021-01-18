@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "migrate": "sqlite2 db/employees.db < db/schema.sql",
-    "seed": "sqlite2 db/employees.db < db/seeds.sql",
+    "migrate": "sqlite2 db/employees < db/schema.sql",
+    "seed": "sqlite2 db/employees < db/seeds.sql",
     "db": "sqlite2 db/employees.db",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",

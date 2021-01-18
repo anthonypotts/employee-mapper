@@ -1,9 +1,11 @@
-INSERT INTO department (name)
+USE employees;
+
+INSERT INTO department (dept_name)
 VALUES
-    (1, 'Carpentry'),
-    (2, 'Marketing'),
-    (3, 'Accounting'),
-    (4, 'Engagement');
+    ('Carpentry'),
+    ('Marketing'),
+    ('Accounting'),
+    ('Engagement');
 
 INSERT INTO role (title, salary, department_id)
 VALUES
@@ -13,10 +15,10 @@ VALUES
     ('Accountant', 40000, 3),
     ('Events Planner', 25000, 4);
 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
+INSERT INTO employee (first_name, last_name, role_id)
 VALUES
-    ('Jack', 'Bauer', 1, NULL),
-    ('Silvio', 'Cappicolo', 2, NULL),
-    ('Janet', 'Jackson', 3, NULL),
-    ('Jerry', 'Garcia', 4, NULL),
-    ('Charlie', 'Puth', 5, NULL);
+    ('Jack', 'Bauer', 1),
+    ('Silvio', 'Cappicolo', 2),
+    ('Janet', 'Jackson', 3),
+    ('Jerry', 'Garcia', 4),
+    ('Charlie', 'Puth', 5);
