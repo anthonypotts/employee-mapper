@@ -1,5 +1,4 @@
 const inquirer = require('inquirer');
-const db = require('./db/database');
 const database = require('./db/database');
 
 const promptUser = () => {
@@ -51,35 +50,35 @@ const promptUser = () => {
                 }
             ]
         }
-    ])
+    ]).then(res => {
+        let choice = res.choice;
+        switch (choice) {
+            case "VIEW_DEPARTMENTS":
+                database.viewDepartments();
+                break;
+            case "VIEW_ROLES":
+                database.viewRoles();
+                break;
+            case "VIEW_EMPLOYEES":
+                database.viewEmployees();
+                break;
+            case "ADD_DEPARTMENT":
+                database.addDepartment();
+                break;
+            case "ADD_ROLE":
+                database.addRole();
+                break;
+            case "ADD_EMPLOYEE":
+                database.addEmployee();
+                break;
+            case "UPDATE_EMPLOYEE_ROLE":
+                database.updateEmployeeRole();
+                break;
+            case "QUIT":
+                database.quit();
+                break;
+        }
+    })
 }
 
-promptUser().then(data => {
-    let option = data.option;
-    switch (option) {
-        case "VIEW_DEPARTMENTS":
-            database.viewDepartments();
-            break;
-        case "VIEW_ROLES":
-            database.viewRoles();
-            break;
-        case "VIEW_EMPLOYEES":
-            database.viewEmployees();
-            break;
-        case "ADD_DEPARTMENT":
-            database.addDepartment();
-            break;
-        case "ADD_ROLE":
-            database.addRole();
-            break;
-        case "ADD_EMPLOYEE":
-            database.addEmployee();
-            break;
-        case "UPDATE_EMPLOYEE_ROLE":
-            database.updateEmployeeRole();
-            break;
-        case "QUIT":
-            database.quit();
-            break;
-    }
-});
+promptUser();
